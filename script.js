@@ -3,59 +3,43 @@ const images = document.querySelectorAll('.gallery__image');
 let currentIndex = 0;
 
 function showNextImage() {
+  // Убираем класс active у текущей фотографии
   images[currentIndex].classList.remove('active');
+
+  // Переходим к следующей фотографии
   currentIndex = (currentIndex + 1) % images.length;
+
+  // Добавляем класс active к новой фотографии
   images[currentIndex].classList.add('active');
 }
 
+// Меняем фотографии каждые 3 секунды
 setInterval(showNextImage, 3000);
 
-// Форма регистрации
-document.getElementById('registrationForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const firstName = document.getElementById('firstName').value;
-  const lastName = document.getElementById('lastName').value;
-  const phone = document.getElementById('phone').value;
-
-  const message = `Hello! This is ${firstName} ${lastName}, my number: ${phone}. I confirm my attendance at the wedding.`;
-  const whatsappUrl = `https://wa.me/79991234567?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, '_blank');
+// Инициализация первой активной фотографии
+document.addEventListener('DOMContentLoaded', () => {
+  images[0].classList.add('active');
 });
 
-// Инициализация карты
+// Инициализация карты с OpenStreetMap
 function initMap() {
-  const mapElement = document.getElementById('map');
-  if (!mapElement) return;
+  // Координаты Central Park, New York
+  const location = [40.7829, -73.9654]; // Central Park, New York
 
-  const location = { lat: 55.755826, lng: 37.617635 }; // Координаты ресторана
-  const map = new google.maps.Map(mapElement, {
-    center: location,
-    zoom: 15,
-    styles: [
-      {
-        featureType: 'all',
-        elementType: 'labels.text.fill',
-        stylers: [{ color: '#ffffff' }],
-      },
-      {
-        featureType: 'all',
-        elementType: 'labels.text.stroke',
-        stylers: [{ color: '#000000' }, { lightness: 13 }],
-      },
-    ],
-  });
+  // Создание карты
+  const map = L.map('map').setView(location, 15); // Центр и масштаб
 
-  new google.maps.Marker({
-    position: location,
-    map: map,
-    title: 'Green Garden Restaurant',
-  });
+  // Добавление слоя OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Добавление маркера
+  L.marker(location)
+    .addTo(map)
+    .bindPopup('Green Garden Restaurant')
+    .openPopup();
 }
 
-// Перерисовка карты при обновлении страницы
-window.addEventListener('load', function () {
-  initMap();
-  setTimeout(() => {
-    google.maps.event.trigger(map, 'resize');
-  }, 100);
-});
+// Загрузка карты после загрузки DOM
+document.addEventListener('DOMContentLoaded', initMap);

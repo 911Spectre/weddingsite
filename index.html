@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <!-- Подключение Leaflet.js для карты -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <div class="header__container">
       <h1 class="header__title">A Paradise Wedding</h1>
       <p class="header__names">Aidai & Erjan</p>
@@ -36,7 +38,7 @@
     <div class="venue__container">
       <h2 class="venue__title">Venue</h2>
       <p class="venue__name">Green Garden Restaurant</p>
-      <p class="venue__address">Moscow, Flower Street, 5</p>
+      <p class="venue__address">Central Park, New York</p>
       <img src="/images/restaurant.jpg" alt="Restaurant" class="venue__image">
     </div>
   </section>
