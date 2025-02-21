@@ -1,9 +1,13 @@
 /* Общие стили */
+* {
+  list-style-type: none;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   margin: 0;
   padding: 0;
-  background: url('/images/background.jpg') no-repeat center center/cover;
+  background: url('images/background.jpg') no-repeat center center/cover;
   background-size: cover;
   background-attachment: fixed;
   color: #333;
@@ -48,6 +52,7 @@ html {
   text-align: center;
   padding: 80px 20px;
 }
+
 .header__container {
   max-width: 900px;
   margin: 0 auto;
@@ -56,16 +61,19 @@ html {
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
 .header__title {
   font-family: 'Great Vibes', cursive;
   font-size: 5rem;
   color: #ff6f61;
   margin: 0;
 }
+
 .header__names {
   font-size: 3rem;
   color: #333;
 }
+
 .header__date {
   font-size: 1.5rem;
   color: #555;
@@ -98,9 +106,11 @@ html {
   justify-content: center;
   margin: 40px 0;
 }
+
 .gallery__container {
   display: flex;
   flex-wrap: wrap;
+
   gap: 20px;
   width: 90%;
   max-width: 900px;
@@ -109,12 +119,15 @@ html {
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
 .gallery__image {
   width: calc(33.33% - 13.33px);
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
+
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Приглашение */
@@ -122,6 +135,7 @@ html {
   text-align: center;
   padding: 40px 20px;
 }
+
 .invitation__container {
   max-width: 900px;
   margin: 0 auto;
@@ -130,6 +144,7 @@ html {
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
 .invitation__text {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
@@ -140,6 +155,7 @@ html {
 .venue {
   padding: 40px 20px;
 }
+
 .venue__container {
   max-width: 900px;
   margin: 0 auto;
@@ -148,19 +164,23 @@ html {
   border-radius: 15px;
   text-align: center;
 }
+
 .venue__title {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: #ff6f61;
 }
+
 .venue__name {
   font-size: 1.8rem;
   color: #333;
 }
+
 .venue__address {
   font-size: 1.3rem;
   color: #555;
 }
+
 .venue__image {
   width: 100%;
   border-radius: 10px;
@@ -206,6 +226,7 @@ html {
 .rules {
   padding: 40px 20px;
 }
+
 .rules__container {
   max-width: 900px;
   margin: 0 auto;
@@ -214,15 +235,18 @@ html {
   border-radius: 15px;
   text-align: center;
 }
+
 .rules__title {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: #ff6f61;
 }
+
 .rules__list {
   list-style: none;
   padding: 0;
 }
+
 .rules__list li {
   font-size: 1.3rem;
   color: #333;
@@ -233,6 +257,7 @@ html {
 .map {
   padding: 40px 20px;
 }
+
 #map {
   max-width: 900px;
   width: 100%;
@@ -246,6 +271,7 @@ html {
 .registration {
   padding: 40px 20px;
 }
+
 .registration__container {
   max-width: 600px;
   margin: 0 auto;
@@ -254,17 +280,20 @@ html {
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+
 .registration__title {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: #ff6f61;
   text-align: center;
 }
+
 .registration__form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .registration__form input {
   padding: 15px;
   font-size: 1.2rem;
@@ -274,11 +303,13 @@ html {
   color: #333;
   transition: all 0.3s ease;
 }
+
 .registration__form input:focus {
   border-color: #ff4d3a;
   box-shadow: 0 0 10px rgba(255, 77, 58, 0.3);
   outline: none;
 }
+
 .registration__button {
   background: linear-gradient(145deg, #ff6f61, #ff4d3a);
   color: white;
@@ -290,6 +321,7 @@ html {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .registration__button:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(255, 77, 58, 0.3);
@@ -430,6 +462,41 @@ html {
   color: #555;
 }
 
+/* Лист гостей */
+
+.guestList {
+  padding: 20px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.guestList__container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.9);
+}
+
+.guestList__title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ff6f61;
+}
+
+.guestList__container ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.guestList__container ul li {
+  font-size: 20px;
+  color: #333;
+}
+
 /* Футер */
 .footer {
   text-align: center;
@@ -444,11 +511,13 @@ html {
 .footer__social {
   margin-bottom: 15px;
 }
+
 .footer__social img {
   width: 50px;
   margin: 0 20px;
   transition: transform 0.3s ease;
 }
+
 .footer__social img:hover {
   transform: scale(1.2);
 }
@@ -471,6 +540,7 @@ html {
 
 /* Медиа-запросы */
 @media (max-width: 768px) {
+
   .header__title { font-size: 3.5rem; }
   .header__names { font-size: 2rem; }
   .header__date { font-size: 1.2rem; }
@@ -483,4 +553,49 @@ html {
   .footer__message { font-size: 1.5rem; }
   .guests__list li { font-size: 1.1rem; }
   .guests__count { font-size: 1rem; }
+
+  .header__title {
+    font-size: 3rem;
+  }
+
+  .header__names {
+    font-size: 2rem;
+  }
+
+  .header__date {
+    font-size: 1rem;
+  }
+
+  .invitation__text {
+    font-size: 1.5rem;
+  }
+
+  .venue__title,
+  .rules__title,
+  .registration__title {
+    font-size: 1.8rem;
+  }
+
+  .rules__list li {
+    font-size: 1rem;
+  }
+
+  .gallery__slider {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gallery__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery__image.active {
+    transform: scale(1);
+  }
+
+  #map {
+    height: 300px;
+  }
+
 }
