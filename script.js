@@ -96,29 +96,29 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // Отображение списка гостей 
-function listGuests () {
-  const peopleData = sessionStorage.getItem('people');
+// function listGuests () {
+//   const peopleData = sessionStorage.getItem('people');
 
-  if (peopleData) {
-    const people = JSON.parse(peopleData);
+//   if (peopleData) {
+//     const people = JSON.parse(peopleData);
 
-    const peopleList = document.getElementById('guestList__items');
+//     const peopleList = document.getElementById('guestList__items');
 
-    peopleList.innerHTML = '';
+//     peopleList.innerHTML = '';
 
-    people.map(person => {
-      const li = document.createElement('li');
-      li.textContent = `${person.lastName} ${person.name}`;
-      peopleList.append(li);
-    })
-  } else {
-    const li = document.createElement('li');
-    li.textContent = "No guests";
-    document.getElementById('guestList__items').append(li);
-  }
-}
+//     people.map(person => {
+//       const li = document.createElement('li');
+//       li.textContent = `${person.lastName} ${person.name}`;
+//       peopleList.append(li);
+//     })
+//   } else {
+//     const li = document.createElement('li');
+//     li.textContent = "No guests";
+//     document.getElementById('guestList__items').append(li);
+//   }
+// }
 
-listGuests();
+// listGuests();
 
 
 // Загрузка карты после загрузки DOM
