@@ -10,6 +10,26 @@ body {
   min-height: 100vh;
 }
 
+/* Плавная прокрутка для всей страницы */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Стиль для тестовой ссылки */
+.scroll-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: white;
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
 /* Хедер */
 .header {
   text-align: center;
@@ -62,13 +82,13 @@ body {
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.3s ease;
   border-radius: 10px;
   opacity: 0.7;
-  cursor: pointer; /* Указатель мыши меняется на "руку" */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .gallery__image:hover {
-  transform: scale(1.2); /* Увеличение при наведении */
-  opacity: 1; /* Полная видимость */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Усиленная тень */
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .gallery__image.active {
   transform: scale(1.2);
@@ -169,11 +189,14 @@ body {
   margin: 40px 0;
 }
 #map {
+  max-width: 800px;
   width: 100%;
-  height: 400px;
-  border-radius: 5px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.9);
+  height: 300px;
 }
 
 /* Регистрация */
@@ -285,6 +308,6 @@ body {
     transform: scale(1);
   }
   #map {
-    height: 300px; /* Уменьшенная высота карты для мобильных устройств */
+    height: 300px;
   }
 }
