@@ -5,47 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Подключение Leaflet.js для карты -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li><a href="#header" class="nav__link">Home</a></li>
+      <li><a href="#gallery" class="nav__link">Gallery</a></li>
+      <li><a href="#venue" class="nav__link">Venue</a></li>
+      <li><a href="#rsvp" class="nav__link">RSVP</a></li>
+      <li><a href="#guests" class="nav__link">Guests</a></li>
+      <li><a href="#wishes" class="nav__link">Wishes</a></li>
+    </ul>
+  </nav>
+
   <header class="header" id="header">
-    <div class="header__container">
+    <div class="header__container animate__fadeIn">
       <h1 class="header__title">A Paradise Wedding</h1>
       <p class="header__names">Aidai & Erjan</p>
       <p class="header__date">Saturday, June 15th, 2028</p>
+      <div class="countdown" id="countdown"></div>
     </div>
   </header>
 
-  <section class="gallery">
-    <div class="gallery__slider">
-      <img src="/images/para1.jpg" alt="Couple photo" class="gallery__image active">
+  <section class="gallery" id="gallery">
+    <div class="gallery__container">
+      <img src="/images/para1.jpg" alt="Couple photo" class="gallery__image">
       <img src="/images/para2.jpg" alt="Couple photo" class="gallery__image">
       <img src="/images/para4.jpg" alt="Couple photo" class="gallery__image">
     </div>
   </section>
 
   <section class="invitation">
-    <div class="invitation__container">
+    <div class="invitation__container animate__fadeIn">
       <p class="invitation__text">
         "Love is a paradise on Earth. We invite you to share our joy and become part of our special day."
       </p>
     </div>
   </section>
 
-  <section class="venue">
+  <section class="venue" id="venue">
     <div class="venue__container">
-      <h2 class="venue__title">Venue</h2>
+      <h2 class="venue__title animate__fadeIn">Venue</h2>
       <p class="venue__name">Green Garden Restaurant</p>
       <p class="venue__address">Central Park, New York</p>
-      <img src="/images/restaurant.jpg" alt="Restaurant" class="venue__image">
+      <img src="/images/restaurant.jpg" alt="Restaurant" class="venue__image animate__zoomIn">
+    </div>
+  </section>
+
+  <section class="timeline">
+    <div class="timeline__container">
+      <h2 class="timeline__title animate__fadeIn">Wedding Day Timeline</h2>
+      <ul class="timeline__list">
+        <li class="timeline__item">12:00 PM - Guests Arrival</li>
+        <li class="timeline__item">1:00 PM - Ceremony Begins</li>
+        <li class="timeline__item">2:00 PM - Reception & Lunch</li>
+        <li class="timeline__item">4:00 PM - Dancing & Celebration</li>
+      </ul>
     </div>
   </section>
 
   <section class="rules">
     <div class="rules__container">
-      <h2 class="rules__title">Event Guidelines</h2>
+      <h2 class="rules__title animate__fadeIn">Event Guidelines</h2>
       <ul class="rules__list">
         <li>Dress code: light tones.</li>
         <li>Please arrive on time.</li>
@@ -55,12 +79,12 @@
   </section>
 
   <section class="map">
-    <div id="map" class="map__container"></div>
+    <div id="map" class="map__container animate__fadeIn"></div>
   </section>
 
-  <section class="registration">
+  <section class="registration" id="rsvp">
     <div class="registration__container">
-      <h2 class="registration__title">RSVP</h2>
+      <h2 class="registration__title animate__fadeIn">RSVP</h2>
       <form id="registrationForm" class="registration__form">
         <input type="text" id="firstName" placeholder="First Name" required>
         <input type="text" id="lastName" placeholder="Last Name" required>
@@ -70,11 +94,35 @@
     </div>
   </section>
 
+  <section class="guests" id="guests">
+    <div class="guests__container">
+      <h2 class="guests__title animate__fadeIn">Confirmed Guests</h2>
+      <button class="guests__toggle" id="guestsToggle">Hide/Show Guests</button>
+      <ul class="guests__list" id="guestsList"></ul>
+      <p class="guests__count" id="guestsCount"></p>
+    </div>
+  </section>
+
+  <section class="wishes" id="wishes">
+    <div class="wishes__container">
+      <h2 class="wishes__title animate__fadeIn">Guest Wishes</h2>
+      <form id="wishForm" class="wishes__form">
+        <textarea id="wishText" placeholder="Leave your wishes here..." required></textarea>
+        <button type="submit" class="wishes__button">Send Wish</button>
+      </form>
+      <div class="wishes__list" id="wishesList"></div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div class="footer__social">
-      <a href="https://wa.me/79991234567" target="_blank"><img src="/icons/watsapp.png" alt="WhatsApp"></a>
-      <a href="https://t.me/example" target="_blank"><img src="/icons/telegram.png" alt="Telegram"></a>
-      <a href="https://instagram.com/example" target="_blank"><img src="/icons/instagram.png" alt="Instagram"></a>
+    <div class="footer__content">
+      <div class="footer__social">
+        <a href="https://wa.me/79991234567" target="_blank"><img src="/icons/watsapp.png" alt="WhatsApp"></a>
+        <a href="https://t.me/example" target="_blank"><img src="/icons/telegram.png" alt="Telegram"></a>
+        <a href="https://instagram.com/example" target="_blank"><img src="/icons/instagram.png" alt="Instagram"></a>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__message">With love, <span>Aidai & Erjan</span></p>
     </div>
   </footer>
 
